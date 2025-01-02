@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vend
-  namespace: openshift-gitops
+  name: vend-child
+  namespace: test-apps
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    name: in-cluster
-    namespace: openshift-gitops
-  project: root-application
+    name: vend-child
+    namespace: test-apps
+  project: default
   source:
     helm:
       valueFiles:
@@ -18,9 +18,14 @@ spec:
     repoURL: "https://github.com/thomassuedbroecker/vend-helm"
     targetRevision: HEAD
   syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
     retry:
+      limit: 5
       backoff:
         duration: 5s
+        maxDuration: 5m0s
         factor: 2
-        maxDuration: 3m0s
-      limit: 2
