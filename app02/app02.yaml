@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-app-diksha-2
+  name: test-apps-ns-diksha-2
   namespace: test-apps
 spec:
   selector:
