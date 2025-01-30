@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: test-apps-ns-app1
+  name: test-apps-ns1-app1
 spec:
   destination:
     namespace: test-apps
