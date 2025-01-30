@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-apps2-ns-app01
+spec:
+  destination:
+    namespace: test-apps2
+    server: https://kubernetes.default.svc
+  source:
+    path: app01
+    repoURL: https://github.com/diksha1999/app-of-apps-child
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        maxDuration: 5m0s
+        factor: 2
