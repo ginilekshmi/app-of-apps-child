@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: test-apps-ns-app2
+  name: test-apps-ns1-app2
 spec:
   destination:
     namespace: test-apps
@@ -11,7 +11,7 @@ spec:
     repoURL: https://github.com/diksha1999/app-of-apps-child
     targetRevision: HEAD
   sources: []
-  project: test-apps
+  project: default
   syncPolicy:
     automated:
       prune: true
