@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-apps-ns-app1
+spec:
+  destination:
+    namespace: test-apps
+    server: https://kubernetes.default.svc
+  source:
+    path: app01
+    repoURL: https://github.com/diksha1999/app-of-apps-child
+    targetRevision: HEAD
+  sources: []
+  project: test-apps
