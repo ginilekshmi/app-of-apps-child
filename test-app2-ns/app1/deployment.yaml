@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: test-apps-ns2-diksha-1
-  namespace: test-apps-ns2
+  namespace: test-apps2
 spec:
   selector:
     matchLabels:
