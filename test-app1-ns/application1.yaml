@@ -7,7 +7,7 @@ spec:
     namespace: test-apps
     server: https://kubernetes.default.svc
   source:
-    path: test-app1-ns/app01
+    path: test-app1-ns/app011
     repoURL: https://github.com/diksha1999/app-of-apps-child
     targetRevision: HEAD
   sources: []
