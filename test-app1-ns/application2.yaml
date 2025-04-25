@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   source:
     path: test-app1-ns/app02
-    repoURL: https://github.com/ginilekshmi/app-of-apps-child/tree/master
+    repoURL: https://github.com/ginilekshmi/app-of-apps-child
     targetRevision: HEAD
   sources: []
   project: default
